@@ -14,7 +14,7 @@ app.use(cors( { origin : "*"}));
 
 app.get("/", getTask )
 app.post("/save", saveTask)
-app.delete("/delete", deleteTask)
+app.delete("/delete/:_id", deleteTask)
 app.put("/update", updateTask)
 
 

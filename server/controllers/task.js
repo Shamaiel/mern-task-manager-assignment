@@ -23,8 +23,8 @@ const getTask = async (req,res)=>{
  
     } catch (error) {
 
-        console.log('Error')
-        res.status(500).send('Internal server error: ' + err.message)
+        console.log(error)
+        res.status(500).send('Internal server error: ' + error.message)
         
     }
 
@@ -33,7 +33,7 @@ const getTask = async (req,res)=>{
 
 const deleteTask = async (req,res)=>{
     try{
-        const {_id}= req.body;
+        const { _id } = req.params;
         await taskModel.findByIdAndDelete(_id)
         res.status(201).send('deleted successfully')
     }
